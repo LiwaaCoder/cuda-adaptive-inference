@@ -22,13 +22,13 @@ Instead of a one-size-fits-all approach, this engine dynamically toggles between
 
 ```mermaid
 graph TD
-    A[User Request] -->|Analyze Intent| B{Task Type?}
-    B -->|Critical Math/Medical| C[Precision Path (FP32)]
-    B -->|Creative/Chat/Vision| D[Turbo Path (FP16)]
-    C -->|Route to| E[Standard CUDA Cores]
-    D -->|Route to| F[Tensor Cores / Half-Floats]
-    E --> G[Result]
-    F --> G[Result]
+    A["User Request"] -->|Analyze Intent| B{"Task Type?"}
+    B -->|"Critical Math/Medical"| C["Precision Path (FP32)"]
+    B -->|"Creative/Chat/Vision"| D["Turbo Path (FP16)"]
+    C -->|"Route to"| E["Standard CUDA Cores"]
+    D -->|"Route to"| F["Tensor Cores / Half-Floats"]
+    E --> G["Result"]
+    F --> G["Result"]
     style C fill:#ee4444,stroke:#333,stroke-width:2px,color:#fff
     style D fill:#44ee44,stroke:#333,stroke-width:2px,color:#000
 ```
