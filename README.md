@@ -1,7 +1,6 @@
 <div align="center">
 
-# ⚡ Adaptive Precision Inference Engine (C++/CUDA)
-### Intelligent Low-Level Runtime for Dynamic Kernel Dispatch
+![Adaptive Precision Inference Engine](assets/hero_banner.png)
 
 ![C++](https://img.shields.io/badge/Standard-C%2B%2B17-blue?style=for-the-badge&logo=c%2B%2B)
 ![CUDA](https://img.shields.io/badge/CUDA-11.x-76B900?style=for-the-badge&logo=nvidia)
@@ -20,18 +19,11 @@ Instead of a one-size-fits-all approach, this engine dynamically toggles between
 
 ## 🧠 The "Adaptive" Architecture
 
-```mermaid
-graph TD
-    A["User Request"] -->|Analyze Intent| B{"Task Type?"}
-    B -->|"Critical Math/Medical"| C["Precision Path (FP32)"]
-    B -->|"Creative/Chat/Vision"| D["Turbo Path (FP16)"]
-    C -->|"Route to"| E["Standard CUDA Cores"]
-    D -->|"Route to"| F["Tensor Cores / Half-Floats"]
-    E --> G["Result"]
-    F --> G["Result"]
-    style C fill:#ee4444,stroke:#333,stroke-width:2px,color:#fff
-    style D fill:#44ee44,stroke:#333,stroke-width:2px,color:#000
-```
+<div align="center">
+
+![Architecture Flow](assets/architecture_flow.png)
+
+</div>
 
 ## ✨ Key Technical Features
 
@@ -46,11 +38,23 @@ This project bypasses high-level libraries (like cuBLAS) to demonstrate system-l
 
 Tested on **NVIDIA T4** (2048x2048 Matrix Multiplication):
 
+<div align="center">
+
+![Benchmark Comparison](benchmark/benchmark_comparison.png)
+
+</div>
+
 | Metric | FP32 (Standard) | FP16 (Optimized) | Improvement |
 | :--- | :---: | :---: | :---: |
 | **Precision** | 32-bit Float | 16-bit Half | 2x Throughput |
 | **Latency** | 46.2 ms | 40.8 ms | **~12% Faster** |
 | **Memory Load** | 100% | 50% | **Bandwidth Saved** |
+
+<div align="center">
+
+![Performance Metrics](assets/performance_metrics.png)
+
+</div>
 
 ## 🛠️ Getting Started
 
